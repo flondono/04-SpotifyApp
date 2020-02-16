@@ -10,6 +10,7 @@ import { SpotifyService } from '../../services/spotify.service';
 export class HomeComponent {
 
   nuevasCanciones: any[] = [];
+  loading: boolean;
 
   // paises: any[] = [];
 
@@ -25,6 +26,7 @@ export class HomeComponent {
     this.spotify.getNewReleases().subscribe((data: any) => {
       console.log(data);
       this.nuevasCanciones = data;
+      this.loading = false;
     });
   }
 }
